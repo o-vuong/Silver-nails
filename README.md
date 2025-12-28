@@ -1,290 +1,296 @@
-Welcome to your new TanStack app! 
+# Silver Nails - Luxury Nail Salon Website
 
-# Getting Started
+<div align="center">
 
-To run this application:
+**A modern, full-stack luxury nail salon website built with TanStack Start**
+
+[![TanStack Start](https://img.shields.io/badge/TanStack-Start-blue)](https://tanstack.com/start)
+[![React 19](https://img.shields.io/badge/React-19-blue)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-blue)](https://tailwindcss.com)
+[![Notion API](https://img.shields.io/badge/Notion-API-black)](https://developers.notion.com)
+
+[Demo](#) • [Documentation](#documentation) • [Features](#features) • [Getting Started](#getting-started)
+
+</div>
+
+---
+
+## Overview
+
+Silver Nails is a production-ready, luxury-focused nail salon website featuring comprehensive booking management, client dashboard, admin panel, and payment integration. Built with modern web technologies and designed for easy deployment and long-term maintenance.
+
+### Key Highlights
+
+- 🎨 **Luxury Design System** - Custom theme with silver, rose gold, and champagne colors
+- 📱 **Fully Responsive** - Beautiful on all devices
+- 🚀 **Modern Stack** - TanStack Start, React 19, TypeScript, Tailwind CSS
+- 📊 **Notion Backend** - Easy-to-manage database without complex setup
+- 💳 **Payment Ready** - Integrated PayPal and tap payment support
+- 📅 **Smart Booking** - Real-time availability and scheduling
+- 🔐 **Secure** - Type-safe with comprehensive validation
+- ⚡ **Fast** - Optimized for performance and SEO
+
+## Features
+
+### ✅ Implemented
+
+- **Luxury Homepage**
+  - Stunning hero section with gradient effects
+  - Service showcase with pricing
+  - Customer testimonials
+  - Multiple CTAs for conversions
+
+- **Premium UI Components**
+  - shadcn/ui components customized for luxury aesthetic
+  - Responsive header with mobile menu
+  - Comprehensive footer
+  - Button, Card, Input, Calendar, Dialog, and more
+
+- **Type-Safe Architecture**
+  - Full TypeScript coverage
+  - Zod validation for all forms
+  - Comprehensive type definitions
+
+- **Notion Integration**
+  - Full CRUD operations
+  - Type-safe API wrapper
+  - Support for Users, Staff, Services, Appointments
+
+- **Brand Assets**
+  - 5 logo concepts
+  - Complete color palette
+  - Typography system
+  - Design guidelines
+
+### 🚧 In Progress / Planned
+
+- Booking system with calendar
+- Authentication (login/signup)
+- Client dashboard
+- Admin panel
+- Services page
+- Gallery
+- Payment integration
+- Analytics dashboard
+
+## Technology Stack
+
+### Frontend
+- **Framework**: TanStack Start (React 19)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4.0
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React
+- **Routing**: TanStack Router
+- **State**: TanStack Query
+- **Forms**: TanStack Form + React Hook Form
+- **Validation**: Zod
+
+### Backend
+- **Database**: Notion API
+- **Authentication**: JWT + bcryptjs
+- **Payments**: PayPal, Tap payments
+
+### DevOps
+- **Build**: Vite
+- **Runtime**: Nitro
+- **Hosting**: Vercel (recommended)
+- **Package Manager**: pnpm
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20+
+- pnpm 10+
+- Notion account (free tier works)
+- Git
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone <your-repo-url>
+cd silver-nails
+
+# Install dependencies
 pnpm install
-pnpm start
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your Notion API credentials
+
+# Run development server
+pnpm dev
 ```
 
-# Building For Production
+Open [http://localhost:3000](http://localhost:3000) to see your site.
 
-To build this application for production:
+### Quick Start (No Database)
+
+The site will work out of the box with sample data for demonstration purposes. To connect to Notion:
+
+1. Follow the **[Notion Setup Guide](NOTION_SETUP.md)**
+2. Add your API keys to `.env`
+3. Restart the dev server
+
+## Building For Production
 
 ```bash
+# Build for production
 pnpm build
+
+# Preview production build
+pnpm preview
 ```
 
 ## Testing
 
-This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
-
 ```bash
+# Run tests
 pnpm test
+
+# Run tests in watch mode
+pnpm test:watch
 ```
 
-## Styling
-
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
 
 
 
+## Documentation
+
+### Comprehensive Guides
+
+- **[Project Summary](PROJECT_SUMMARY.md)** - Complete project overview and status
+- **[Brand Assets](BRAND_ASSETS.md)** - Logo concepts, colors, typography, and design system
+- **[Notion Setup](NOTION_SETUP.md)** - Step-by-step database configuration
+- **[Deployment Guide](DEPLOYMENT.md)** - Vercel deployment instructions
+
+### Project Structure
+
+```
+silver-nails/
+├── src/
+│   ├── components/          # React components
+│   │   ├── ui/              # shadcn UI components
+│   │   ├── Header.tsx       # Main navigation
+│   │   └── Footer.tsx       # Site footer
+│   ├── lib/                 # Utilities and integrations
+│   │   ├── utils.ts         # Helper functions
+│   │   ├── validations.ts   # Zod schemas
+│   │   └── notion.ts        # Notion API wrapper
+│   ├── routes/              # TanStack Router pages
+│   │   ├── __root.tsx       # Root layout
+│   │   └── index.tsx        # Homepage
+│   ├── types/               # TypeScript definitions
+│   │   └── index.ts         # Domain types
+│   └── styles.css           # Global styles + Tailwind
+├── BRAND_ASSETS.md          # Brand guide
+├── PROJECT_SUMMARY.md       # Project documentation
+├── NOTION_SETUP.md          # Database setup guide
+├── DEPLOYMENT.md            # Deployment instructions
+└── package.json
+```
+
+## Color Palette
+
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Silver | `#A0A7B5` | Primary color - sophistication |
+| Rose Gold | `#E6B8B8` | Secondary - luxury and warmth |
+| Champagne | `#F5EDD8` | Accent - elegance |
 
 ## Routing
-This project uses [TanStack Router](https://tanstack.com/router). The initial setup is a file based router. Which means that the routes are managed as files in `src/routes`.
+This project uses [TanStack Router](https://tanstack.com/router) with file-based routing. Routes are managed as files in `src/routes`.
 
-### Adding A Route
+## Environment Variables
 
-To add a new route to your application just add another a new file in the `./src/routes` directory.
+Create a `.env` file in the root directory:
 
-TanStack will automatically generate the content of the route file for you.
+```env
+# Notion API
+NOTION_API_KEY=your_notion_integration_token
+NOTION_DB_USERS=your_users_database_id
+NOTION_DB_STAFF=your_staff_database_id
+NOTION_DB_SERVICES=your_services_database_id
+NOTION_DB_APPOINTMENTS=your_appointments_database_id
+NOTION_DB_PAYMENTS=your_payments_database_id
+NOTION_DB_LOYALTY=your_loyalty_database_id
+NOTION_DB_REVIEWS=your_reviews_database_id
+NOTION_DB_GALLERY=your_gallery_database_id
 
-Now that you have two routes you can use a `Link` component to navigate between them.
+# Authentication
+JWT_SECRET=your_secret_key_minimum_32_characters
 
-### Adding Links
-
-To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/react-router`.
-
-```tsx
-import { Link } from "@tanstack/react-router";
+# Site Configuration
+SITE_URL=http://localhost:3000
 ```
 
-Then anywhere in your JSX you can use it like so:
+See [NOTION_SETUP.md](NOTION_SETUP.md) for detailed database setup instructions.
 
-```tsx
-<Link to="/about">About</Link>
-```
+## Deployment
 
-This will create a link that will navigate to the `/about` route.
-
-More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
-
-### Using A Layout
-
-In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you use the `<Outlet />` component.
-
-Here is an example layout that includes a header:
-
-```tsx
-import { Outlet, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-
-import { Link } from "@tanstack/react-router";
-
-export const Route = createRootRoute({
-  component: () => (
-    <>
-      <header>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-        </nav>
-      </header>
-      <Outlet />
-      <TanStackRouterDevtools />
-    </>
-  ),
-})
-```
-
-The `<TanStackRouterDevtools />` component is not required so you can remove it if you don't want it in your layout.
-
-More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
-
-
-## Data Fetching
-
-There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a server. But you can also use the `loader` functionality built into TanStack Router to load the data for a route before it's rendered.
-
-For example:
-
-```tsx
-const peopleRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/people",
-  loader: async () => {
-    const response = await fetch("https://swapi.dev/api/people");
-    return response.json() as Promise<{
-      results: {
-        name: string;
-      }[];
-    }>;
-  },
-  component: () => {
-    const data = peopleRoute.useLoaderData();
-    return (
-      <ul>
-        {data.results.map((person) => (
-          <li key={person.name}>{person.name}</li>
-        ))}
-      </ul>
-    );
-  },
-});
-```
-
-Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
-
-### React-Query
-
-React-Query is an excellent addition or alternative to route loading and integrating it into you application is a breeze.
-
-First add your dependencies:
+### Deploy to Vercel (Recommended)
 
 ```bash
-pnpm add @tanstack/react-query @tanstack/react-query-devtools
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel --prod
 ```
 
-Next we'll need to create a query client and provider. We recommend putting those in `main.tsx`.
+For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
-```tsx
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+### Deploy to Other Platforms
 
-// ...
+Silver Nails can be deployed to any platform that supports Node.js:
+- Netlify
+- Railway
+- Render
+- Fly.io
 
-const queryClient = new QueryClient();
+## Contributing
 
-// ...
+Contributions are welcome! Please follow these steps:
 
-if (!rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement);
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-  root.render(
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
-  );
-}
-```
+## License
 
-You can also add TanStack Query Devtools to the root route (optional).
+This project is licensed under the MIT License. See LICENSE file for details.
 
-```tsx
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+## Support
 
-const rootRoute = createRootRoute({
-  component: () => (
-    <>
-      <Outlet />
-      <ReactQueryDevtools buttonPosition="top-right" />
-      <TanStackRouterDevtools />
-    </>
-  ),
-});
-```
+For support and questions:
+- 📧 Email: support@silvernails.com (update with your email)
+- 📚 [Documentation](PROJECT_SUMMARY.md)
+- 🐛 [Report Issues](../../issues)
 
-Now you can use `useQuery` to fetch your data.
+## Acknowledgments
 
-```tsx
-import { useQuery } from "@tanstack/react-query";
+- Built with [TanStack Start](https://tanstack.com/start)
+- UI components from [shadcn/ui](https://ui.shadcn.com)
+- Icons by [Lucide](https://lucide.dev)
+- Database by [Notion](https://notion.so)
 
-import "./App.css";
+## Learn More
 
-function App() {
-  const { data } = useQuery({
-    queryKey: ["people"],
-    queryFn: () =>
-      fetch("https://swapi.dev/api/people")
-        .then((res) => res.json())
-        .then((data) => data.results as { name: string }[]),
-    initialData: [],
-  });
+- [TanStack Documentation](https://tanstack.com)
+- [React Documentation](https://react.dev)
+- [Tailwind CSS Documentation](https://tailwindcss.com)
+- [Notion API Documentation](https://developers.notion.com)
 
-  return (
-    <div>
-      <ul>
-        {data.map((person) => (
-          <li key={person.name}>{person.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+---
 
-export default App;
-```
+<div align="center">
 
-You can find out everything you need to know on how to use React-Query in the [React-Query documentation](https://tanstack.com/query/latest/docs/framework/react/overview).
+**Built with ❤️ for luxury nail salons**
 
-## State Management
 
-Another common requirement for React applications is state management. There are many options for state management in React. TanStack Store provides a great starting point for your project.
-
-First you need to add TanStack Store as a dependency:
-
-```bash
-pnpm add @tanstack/store
-```
-
-Now let's create a simple counter in the `src/App.tsx` file as a demonstration.
-
-```tsx
-import { useStore } from "@tanstack/react-store";
-import { Store } from "@tanstack/store";
-import "./App.css";
-
-const countStore = new Store(0);
-
-function App() {
-  const count = useStore(countStore);
-  return (
-    <div>
-      <button onClick={() => countStore.setState((n) => n + 1)}>
-        Increment - {count}
-      </button>
-    </div>
-  );
-}
-
-export default App;
-```
-
-One of the many nice features of TanStack Store is the ability to derive state from other state. That derived state will update when the base state updates.
-
-Let's check this out by doubling the count using derived state.
-
-```tsx
-import { useStore } from "@tanstack/react-store";
-import { Store, Derived } from "@tanstack/store";
-import "./App.css";
-
-const countStore = new Store(0);
-
-const doubledStore = new Derived({
-  fn: () => countStore.state * 2,
-  deps: [countStore],
-});
-doubledStore.mount();
-
-function App() {
-  const count = useStore(countStore);
-  const doubledCount = useStore(doubledStore);
-
-  return (
-    <div>
-      <button onClick={() => countStore.setState((n) => n + 1)}>
-        Increment - {count}
-      </button>
-      <div>Doubled - {doubledCount}</div>
-    </div>
-  );
-}
-
-export default App;
-```
-
-We use the `Derived` class to create a new store that is derived from another store. The `Derived` class has a `mount` method that will start the derived store updating.
-
-Once we've created the derived store we can use it in the `App` component just like we would any other store using the `useStore` hook.
-
-You can find out everything you need to know on how to use TanStack Store in the [TanStack Store documentation](https://tanstack.com/store/latest).
-
-# Demo files
-
-Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play around with the features you've installed.
-
-# Learn More
-
-You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
+</div>
