@@ -38,6 +38,7 @@ vercel --prod
 ### Option 2: Deploy via Vercel Dashboard
 
 1. **Push code to GitHub**
+
    ```bash
    git add .
    git commit -m "feat: initial deployment"
@@ -97,15 +98,16 @@ SMTP_USER=your-email@gmail.com
 SMTP_PASSWORD=your-app-password
 
 # PayPal (when implemented)
-PAYPAL_CLIENT_ID=your_paypal_client_id
-PAYPAL_SECRET=your_paypal_secret
-PAYPAL_MODE=sandbox  # or 'production'
+PAYPAL_CLIENT_ID = your_paypal_client_id
+PAYPAL_SECRET    = your_paypal_secret
+PAYPAL_MODE      = sandbox  # or 'production'
 
 # Analytics (optional)
 GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
 ```
 
 **Important**:
+
 - Set environment for all environments (Production, Preview, Development)
 - Or select specific environments as needed
 - Never commit `.env` file to Git
@@ -181,11 +183,12 @@ pnpm add @vercel/speed-insights
 ```
 
 In `src/routes/__root.tsx`:
+
 ```tsx
-import { SpeedInsights } from '@vercel/speed-insights/react'
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Add to RootDocument:
-<SpeedInsights />
+<SpeedInsights />;
 ```
 
 ### 2. Enable Vercel Analytics
@@ -195,10 +198,10 @@ pnpm add @vercel/analytics
 ```
 
 ```tsx
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from "@vercel/analytics/react";
 
 // Add to RootDocument:
-<Analytics />
+<Analytics />;
 ```
 
 ### 3. Configure Edge Functions (Optional)
@@ -207,7 +210,7 @@ For faster global performance:
 
 ```typescript
 // In route files where needed:
-export const runtime = 'edge'
+export const runtime = "edge";
 ```
 
 ### 4. Image Optimization
@@ -216,7 +219,7 @@ Use Vercel's automatic image optimization:
 
 ```tsx
 // Instead of <img>:
-import Image from 'next/image' // Or use Vercel's image component
+import Image from "next/image"; // Or use Vercel's image component
 
 <Image
   src="/nail-art.jpg"
@@ -224,7 +227,7 @@ import Image from 'next/image' // Or use Vercel's image component
   width={800}
   height={600}
   quality={85}
-/>
+/>;
 ```
 
 ## Monitoring & Observability
@@ -232,6 +235,7 @@ import Image from 'next/image' // Or use Vercel's image component
 ### 1. Vercel Dashboard
 
 Monitor:
+
 - Deployment status
 - Build logs
 - Function logs
@@ -251,6 +255,7 @@ Configure in `vite.config.ts` and application.
 ### 3. Uptime Monitoring
 
 Recommended services:
+
 - UptimeRobot (free)
 - Pingdom
 - StatusCake
@@ -268,6 +273,7 @@ Vercel provides automatic CI/CD:
 ### Branch Protection (Recommended)
 
 In GitHub:
+
 1. Go to Settings → Branches
 2. Add rule for `main` branch:
    - Require pull request reviews
@@ -305,6 +311,7 @@ In GitHub:
    - Click "..." → "Promote to Production"
 
 2. **Via Git**
+
    ```bash
    # Revert to previous commit
    git revert HEAD
@@ -320,6 +327,7 @@ In GitHub:
 ## Environment-Specific Configurations
 
 ### Development
+
 ```env
 SITE_URL=http://localhost:3000
 PAYPAL_MODE=sandbox
@@ -327,6 +335,7 @@ LOG_LEVEL=debug
 ```
 
 ### Staging (Preview)
+
 ```env
 SITE_URL=https://silver-nails-git-staging.vercel.app
 PAYPAL_MODE=sandbox
@@ -334,6 +343,7 @@ LOG_LEVEL=info
 ```
 
 ### Production
+
 ```env
 SITE_URL=https://silvernails.com
 PAYPAL_MODE=production
@@ -392,6 +402,7 @@ Add to `vercel.json`:
 ## Pre-Launch Checklist
 
 ### Technical
+
 - [ ] All pages loading correctly
 - [ ] Mobile responsive on all devices
 - [ ] Forms submitting properly
@@ -403,6 +414,7 @@ Add to `vercel.json`:
 - [ ] Load testing completed
 
 ### Content
+
 - [ ] All text proofread
 - [ ] Images optimized
 - [ ] Services and pricing updated
@@ -414,6 +426,7 @@ Add to `vercel.json`:
 - [ ] Terms of service added
 
 ### SEO
+
 - [ ] Meta tags on all pages
 - [ ] Sitemap generated
 - [ ] robots.txt configured
@@ -423,6 +436,7 @@ Add to `vercel.json`:
 - [ ] Schema.org markup added
 
 ### Business
+
 - [ ] Test bookings with real customers
 - [ ] Staff trained on admin panel
 - [ ] Payment processing tested
@@ -434,6 +448,7 @@ Add to `vercel.json`:
 ## Post-Launch
 
 ### Week 1
+
 1. Monitor error logs daily
 2. Check booking success rate
 3. Gather user feedback
@@ -441,6 +456,7 @@ Add to `vercel.json`:
 5. Update documentation
 
 ### Month 1
+
 1. Review analytics
 2. Optimize conversion funnel
 3. A/B test CTAs
@@ -448,6 +464,7 @@ Add to `vercel.json`:
 5. Plan feature iterations
 
 ### Ongoing
+
 - Weekly analytics review
 - Monthly security updates
 - Quarterly performance optimization
@@ -459,6 +476,7 @@ Add to `vercel.json`:
 ### Build Fails
 
 **Check**:
+
 - Build logs in Vercel dashboard
 - TypeScript errors: `pnpm build` locally
 - Dependency issues: Delete `node_modules`, run `pnpm install`
@@ -467,6 +485,7 @@ Add to `vercel.json`:
 ### Runtime Errors
 
 **Check**:
+
 - Function logs in Vercel
 - Notion API rate limits
 - Environment variable values
@@ -475,6 +494,7 @@ Add to `vercel.json`:
 ### Slow Performance
 
 **Optimize**:
+
 - Enable Edge Functions
 - Add image optimization
 - Implement caching headers
@@ -483,6 +503,7 @@ Add to `vercel.json`:
 ### Database Issues
 
 **Verify**:
+
 - Notion integration still has access
 - Database IDs are correct
 - API key hasn't expired
@@ -500,6 +521,7 @@ Add to `vercel.json`:
 ### Vercel Pricing (as of 2024)
 
 **Hobby (Free)**
+
 - Perfect for getting started
 - Unlimited deployments
 - 100 GB bandwidth/month
@@ -507,6 +529,7 @@ Add to `vercel.json`:
 - Automatic HTTPS
 
 **Pro ($20/month)**
+
 - For growing businesses
 - Advanced analytics
 - Password protection
@@ -514,6 +537,7 @@ Add to `vercel.json`:
 - Team collaboration
 
 **Recommended**: Start with Hobby, upgrade to Pro when:
+
 - Exceeding free tier limits
 - Need team features
 - Want advanced analytics
