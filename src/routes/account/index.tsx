@@ -95,7 +95,7 @@ function AccountDashboard() {
             <Card>
               <CardContent className="p-4">
                 <div className="flex items-center gap-4 mb-6 pb-4 border-b border-border">
-                  <div className="h-16 w-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                  <div className="h-16 w-16 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
                     <span className="text-2xl font-bold text-white">
                       {user.firstName[0]}{user.lastName[0]}
                     </span>

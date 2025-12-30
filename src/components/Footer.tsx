@@ -11,10 +11,10 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="flex flex-col items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent shadow-md">
+              <div className="flex flex-col items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-secondary to-accent shadow-md">
                 <span className="text-lg font-bold text-white font-playfair">SN</span>
               </div>
-              <span className="text-lg font-bold font-playfair bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              <span className="text-lg font-bold font-playfair bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
                 Silver Nails
               </span>
             </div>

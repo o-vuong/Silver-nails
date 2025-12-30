@@ -1,85 +1,242 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   Luxury Nail Salon Theme - Unified Design System
+   ============================================ */
+
 @layer base {
   :root {
-    /* Luxury Color Palette - Silver & Rose Gold Theme */
+    /* ============================================
+       Color Palette - Luxury Nail Salon
+       ============================================ */
+    
+    /* Base Colors */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
+    
+    /* Card & Popover */
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-
-    /* Primary - Silver */
+    
+    /* Primary - Silver (elegant metallic gray) */
     --primary: 240 5% 64%;
     --primary-foreground: 0 0% 100%;
-
-    /* Secondary - Rose Gold */
+    
+    /* Secondary - Rose Gold (warm luxurious pink) */
     --secondary: 12 68% 75%;
     --secondary-foreground: 240 10% 3.9%;
-
-    /* Accent - Champagne Gold */
+    
+    /* Accent - Champagne Gold (sophisticated warm beige) */
     --accent: 40 85% 85%;
     --accent-foreground: 240 10% 3.9%;
-
+    
+    /* Muted Tones (soft grays with slight warmth) */
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
+    
+    /* Destructive (refined red) */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
+    
+    /* Borders & Inputs (soft silver-gray) */
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 5% 64%;
+    
+    /* Border Radius */
     --radius: 0.5rem;
   }
 
   .dark {
+    /* Dark Mode - Luxury Theme */
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
+    
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
+    
     --primary: 240 5% 64%;
     --primary-foreground: 0 0% 100%;
+    
     --secondary: 12 68% 75%;
     --secondary-foreground: 240 10% 3.9%;
+    
     --accent: 40 85% 85%;
     --accent-foreground: 240 10% 3.9%;
+    
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
+    
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
+    
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 5% 64%;
   }
-}
 
-@layer base {
+  /* ============================================
+     Base Styles
+     ============================================ */
+  
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground m-0;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    margin: 0;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.011em;
   }
 
+  /* Typography - Luxury Hierarchy */
   h1, h2, h3, h4, h5, h6 {
     font-family: "Playfair Display", Georgia, serif;
     font-weight: 600;
     letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: hsl(var(--foreground));
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+  }
+
+  p {
+    line-height: 1.7;
+    color: hsl(var(--foreground));
   }
 
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-family: "IBM Plex Mono", "Fira Code", "Consolas", "Monaco", monospace;
+    font-size: 0.875em;
+  }
+
+  /* Focus Styles - Accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Selection Styles */
+  ::selection {
+    background-color: hsl(var(--secondary) / 0.3);
+    color: hsl(var(--foreground));
   }
 }
 
-/* Custom luxury animations */
+/* ============================================
+   Tailwind Theme Configuration
+   ============================================ */
+
+@theme inline {
+  /* Typography */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "IBM Plex Mono", "Fira Code", "Consolas", monospace;
+  
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: -0.011em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  
+  /* Border Radius */
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.25rem);
+  --radius-2xl: calc(var(--radius) + 0.5rem);
+  --radius-3xl: calc(var(--radius) + 0.75rem);
+  --radius-4xl: calc(var(--radius) + 1rem);
+  
+  /* Shadows - Luxury Depth */
+  --shadow-color: 240 5% 3.9%;
+  --shadow-opacity: 0.08;
+  --shadow-blur: 20px;
+  --shadow-spread: -2px;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 4px;
+  
+  --shadow-2xs: 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-opacity) * 0.5));
+  --shadow-xs: 0 1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-opacity) * 0.75));
+  --shadow-sm: 0 2px 4px -1px hsl(var(--shadow-color) / var(--shadow-opacity));
+  --shadow: 0 4px 6px -2px hsl(var(--shadow-color) / var(--shadow-opacity));
+  --shadow-md: 0 8px 12px -4px hsl(var(--shadow-color) / var(--shadow-opacity));
+  --shadow-lg: 0 16px 24px -6px hsl(var(--shadow-color) / calc(var(--shadow-opacity) * 1.5));
+  --shadow-xl: 0 24px 32px -8px hsl(var(--shadow-color) / calc(var(--shadow-opacity) * 2));
+  --shadow-2xl: 0 32px 48px -12px hsl(var(--shadow-color) / calc(var(--shadow-opacity) * 3));
+  
+  /* Color Tokens for Tailwind */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  
+  /* Chart Colors - Luxury Palette */
+  --color-chart-1: hsl(12 68% 75%);
+  --color-chart-2: hsl(240 5% 64%);
+  --color-chart-3: hsl(40 85% 85%);
+  --color-chart-4: hsl(30 60% 70%);
+  --color-chart-5: hsl(280 30% 60%);
+  
+  /* Sidebar Colors */
+  --color-sidebar: hsl(var(--muted));
+  --color-sidebar-foreground: hsl(var(--foreground));
+  --color-sidebar-primary: hsl(var(--primary));
+  --color-sidebar-primary-foreground: hsl(var(--primary-foreground));
+  --color-sidebar-accent: hsl(var(--accent));
+  --color-sidebar-accent-foreground: hsl(var(--accent-foreground));
+  --color-sidebar-border: hsl(var(--border));
+  --color-sidebar-ring: hsl(var(--ring));
+}
+
+/* ============================================
+   Custom Luxury Animations
+   ============================================ */
+
 @keyframes shimmer {
   0% {
     background-position: -200% 0;
@@ -92,11 +249,150 @@
 .shimmer {
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.2) 20%,
-    rgba(255, 255, 255, 0.5) 60%,
-    rgba(255, 255, 255, 0)
+    transparent 0%,
+    hsl(var(--secondary) / 0.1) 20%,
+    hsl(var(--accent) / 0.2) 60%,
+    transparent 100%
   );
   background-size: 200% auto;
-  animation: shimmer 2s linear infinite;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* ============================================
+   Utility Classes - Luxury Enhancements
+   ============================================ */
+
+.luxury-gradient {
+  background: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)));
+}
+
+.luxury-text-gradient {
+  background: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.luxury-border-gradient {
+  border-image: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent))) 1;
+}
+
+/* Glass Morphism Effect */
+.glass {
+  background: hsl(var(--background) / 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+/* Premium Shadow */
+.premium-shadow {
+  box-shadow: 
+    0 4px 6px -2px hsl(var(--shadow-color) / 0.1),
+    0 10px 15px -3px hsl(var(--shadow-color) / 0.08),
+    0 0 0 1px hsl(var(--border) / 0.1);
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   Responsive Typography
+   ============================================ */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  
+  thead {
+    display: table-header-group;
+  }
+  
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  
+  img {
+    max-width: 100% !important;
+  }
+  
+  @page {
+    margin: 2cm;
+  }
+  
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }

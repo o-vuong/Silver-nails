@@ -34,7 +34,7 @@ function AdminLayout() {
           {/* Logo */}
           <div className="flex h-16 items-center border-b border-border px-6">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-secondary to-accent">
                 <span className="text-sm font-bold text-white">SN</span>
               </div>
               <span className="font-bold">Silver Nails</span>
@@ -68,7 +68,7 @@ function AdminLayout() {
           {/* User section */}
           <div className="border-t border-border p-4">
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
                 <span className="text-sm font-bold text-white">A</span>
               </div>
               <div>

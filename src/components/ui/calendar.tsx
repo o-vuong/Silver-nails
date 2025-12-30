@@ -40,8 +40,8 @@ function Calendar({
         ),
         day_range_end: "day-range-end",
         day_selected:
-          "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-        day_today: "bg-accent text-accent-foreground",
+          "bg-gradient-to-br from-secondary to-accent text-white hover:from-secondary/90 hover:to-accent/90 focus:from-secondary focus:to-accent font-semibold shadow-md",
+        day_today: "bg-accent/20 text-accent-foreground border-2 border-accent font-medium",
         day_outside:
           "day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
         day_disabled: "text-muted-foreground opacity-50",

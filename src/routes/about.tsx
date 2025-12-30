@@ -78,12 +78,12 @@ function AboutPage() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative px-6 py-20 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-accent/10" />
         <div className="relative mx-auto max-w-7xl">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               About{' '}
-              <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
                 Silver Nails
               </span>
             </h1>
@@ -102,7 +102,7 @@ function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <p className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <p className="text-4xl font-bold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
                   {stat.value}
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
@@ -138,9 +138,9 @@ function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 flex items-center justify-center">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-secondary/20 to-accent/20 flex items-center justify-center">
                 <div className="text-center p-8">
-                  <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-primary via-secondary to-accent p-1 shadow-2xl">
+                  <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-secondary to-accent p-1 shadow-2xl">
                     <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
                       <Sparkles className="h-12 w-12 text-secondary" />
                     </div>
@@ -167,7 +167,7 @@ function AboutPage() {
             {values.map((value, index) => (
               <Card key={index} className="text-center border-border/50">
                 <CardHeader>
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 text-secondary">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-secondary/20 to-accent/20 text-secondary">
                     {value.icon}
                   </div>
                   <CardTitle className="text-xl">{value.title}</CardTitle>
@@ -193,8 +193,8 @@ function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <Card key={index} className="overflow-hidden">
-                <div className="aspect-square bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 flex items-center justify-center">
-                  <div className="h-24 w-24 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                <div className="aspect-square bg-gradient-to-br from-secondary/10 to-accent/10 flex items-center justify-center">
+                  <div className="h-24 w-24 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
                     <span className="text-3xl font-bold text-white">
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </span>
@@ -332,7 +332,7 @@ function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-16 lg:px-8 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10">
+      <section className="px-6 py-16 lg:px-8 bg-gradient-to-r from-secondary/10 to-accent/10">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Experience the Silver Nails Difference?</h2>
           <p className="text-muted-foreground mb-8">

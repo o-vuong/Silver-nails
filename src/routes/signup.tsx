@@ -79,12 +79,12 @@ function SignupPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary via-secondary to-accent p-0.5">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-secondary to-accent p-0.5">
               <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
                 <Sparkles className="h-6 w-6 text-secondary" />
               </div>
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
               Silver Nails
             </span>
           </Link>

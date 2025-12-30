@@ -47,7 +47,7 @@ function ServicesPage() {
         <div className="relative mx-auto max-w-7xl text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Our{' '}
-            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
               Services
             </span>
           </h1>
@@ -108,7 +108,7 @@ function ServicesPage() {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all ${
                   selectedCategory === cat.id
-                    ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-secondary to-accent text-white shadow-lg'
                     : 'bg-accent/10 hover:bg-accent/20 text-foreground'
                 }`}
               >

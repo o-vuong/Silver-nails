@@ -103,7 +103,7 @@ function HomePage() {
                 </div>
                 <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
                   Elegance at Your{' '}
-                  <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
                     Fingertips
                   </span>
                 </h1>
@@ -143,11 +143,11 @@ function HomePage() {
             </div>
 
             <div className="relative aspect-square lg:aspect-auto lg:h-[600px]">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 blur-3xl" />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-secondary/20 to-accent/20 blur-3xl" />
               <div className="relative h-full rounded-3xl border border-border bg-gradient-to-br from-background/80 to-background/40 p-8 backdrop-blur-sm">
                 <div className="flex h-full items-center justify-center">
                   <div className="text-center">
-                    <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-primary via-secondary to-accent p-1 shadow-2xl">
+                    <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-secondary to-accent p-1 shadow-2xl">
                       <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
                         <Sparkles className="h-16 w-16 text-secondary" />
                       </div>

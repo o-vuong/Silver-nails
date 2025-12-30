@@ -22,11 +22,11 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5 group">
             <div className="flex items-center gap-2">
-              <div className="flex flex-col items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-primary via-secondary to-accent shadow-md group-hover:shadow-lg transition-all">
+              <div className="flex flex-col items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-secondary to-accent shadow-md group-hover:shadow-lg transition-all">
                 <span className="text-xl font-bold text-white font-playfair">SN</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold font-playfair bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                <span className="text-xl font-bold font-playfair bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
                   Silver Nails
                 </span>
                 <span className="text-xs text-muted-foreground tracking-wider">LUXURY NAIL CARE</span>
@@ -60,7 +60,7 @@ export default function Header() {
               className="text-sm font-medium leading-6 text-foreground hover:text-primary transition-colors relative group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-accent transition-all group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent transition-all group-hover:w-full" />
             </Link>
           ))}
         </div>

@@ -103,11 +103,11 @@ function GalleryPage() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative px-6 py-20 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-accent/10" />
         <div className="relative mx-auto max-w-7xl text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Our{' '}
-            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
               Gallery
             </span>
           </h1>
@@ -127,7 +127,7 @@ function GalleryPage() {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all ${
                   selectedCategory === cat.id
-                    ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-secondary to-accent text-white shadow-lg'
                     : 'bg-accent/10 hover:bg-accent/20 text-foreground'
                 }`}
               >
