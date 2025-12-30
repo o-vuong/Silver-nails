@@ -1,3 +1,4 @@
+import type { ChangeEvent, FormEvent } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState } from 'react'
 import {
@@ -31,12 +32,12 @@ function ContactPage() {
     preferredContact: 'email' as 'email' | 'phone',
   })
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 

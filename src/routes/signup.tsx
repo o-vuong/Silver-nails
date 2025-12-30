@@ -1,3 +1,4 @@
+import type { ChangeEvent, FormEvent } from 'react'
 import { createFileRoute, Link, useNavigate } from '@tanstack/react-router'
 import { useState } from 'react'
 import { Sparkles, Mail, Lock, Eye, EyeOff, ArrowRight, User, Phone, Check } from 'lucide-react'
@@ -23,7 +24,7 @@ function SignupPage() {
     confirmPassword: '',
   })
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
     setError('')
@@ -38,7 +39,7 @@ function SignupPage() {
 
   const allRequirementsMet = passwordRequirements.every(req => req.met)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setError('')
 
