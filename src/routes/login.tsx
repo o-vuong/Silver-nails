@@ -6,6 +6,7 @@ import { Button } from '~/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
+import { loginUser } from '~/lib/server/auth'
 
 export const Route = createFileRoute('/login')({ component: LoginPage })
 
@@ -37,12 +38,25 @@ function LoginPage() {
     setIsLoading(true)
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      // On success, navigate to home or dashboard
-      navigate({ to: '/' })
-    } catch {
-      setError('Invalid email or password')
+      const response = await loginUser({ email: formData.email, password: formData.password })
+      
+      if (!response.success || !response.token) {
+        setError(response.error || 'Invalid email or password')
+        return
+      }
+
+      // Store token in localStorage
+      localStorage.setItem('auth_token', response.token)
+      if (response.user) {
+        localStorage.setItem('user', JSON.stringify(response.user))
+      }
+
+      // Navigate to account dashboard or home
+      const redirectTo = response.user?.role === 'admin' ? '/admin' : '/account'
+      navigate({ to: redirectTo })
+    } catch (err) {
+      console.error('Login error:', err)
+      setError('An error occurred. Please try again.')
     } finally {
       setIsLoading(false)
     }

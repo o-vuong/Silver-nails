@@ -57,9 +57,19 @@ export const loginUser = createServerFn({ method: 'POST' })
         return { success: false, error: 'Invalid email or password' }
       }
 
-      // In a real implementation, we'd store hashed passwords in Notion
-      // For now, we'll check against a stored password hash
-      // This is a simplified version - in production, store password hash in user record
+      // Get password hash from user preferences
+      const passwordHash = (user.preferences as any)?.passwordHash
+      
+      if (!passwordHash) {
+        // User exists but has no password set (legacy account or admin-created)
+        return { success: false, error: 'Account not set up. Please contact support or reset your password.' }
+      }
+
+      // Verify password against stored hash
+      const isValidPassword = await verifyPassword(password, passwordHash)
+      if (!isValidPassword) {
+        return { success: false, error: 'Invalid email or password' }
+      }
 
       // Generate token
       const token = generateToken({
@@ -106,17 +116,17 @@ export const registerUser = createServerFn({ method: 'POST' })
         return { success: false, error: 'Email already registered' }
       }
 
-      // Hash password (in production, store this in the user record)
+      // Hash password before storing
       const passwordHash = await hashPassword(password)
 
-      // Create user in Notion
+      // Create user in Notion with hashed password stored in preferences
       const user = await notionDb.users.create({
         firstName,
         lastName,
         email,
         phone,
         role: 'client',
-        // Store password hash in preferences for now (in production, use a separate field)
+        // Store password hash securely in preferences JSON field
         preferences: { passwordHash } as any,
       })
 

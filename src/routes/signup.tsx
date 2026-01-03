@@ -6,6 +6,7 @@ import { Button } from '~/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
+import { registerUser } from '~/lib/server/auth'
 
 export const Route = createFileRoute('/signup')({ component: SignupPage })
 
@@ -62,12 +63,30 @@ function SignupPage() {
     setIsLoading(true)
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      // On success, navigate to login or home
-      navigate({ to: '/login' })
-    } catch {
-      setError('Something went wrong. Please try again.')
+      const response = await registerUser({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        password: formData.password,
+      })
+
+      if (!response.success || !response.token) {
+        setError(response.error || 'Registration failed. Please try again.')
+        return
+      }
+
+      // Store token in localStorage
+      localStorage.setItem('auth_token', response.token)
+      if (response.user) {
+        localStorage.setItem('user', JSON.stringify(response.user))
+      }
+
+      // Navigate to account dashboard
+      navigate({ to: '/account' })
+    } catch (err) {
+      console.error('Registration error:', err)
+      setError('An error occurred during registration. Please try again.')
     } finally {
       setIsLoading(false)
     }
